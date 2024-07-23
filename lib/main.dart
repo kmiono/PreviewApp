@@ -67,13 +67,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         width: double.infinity,
-        child: TextField(
-          decoration: InputDecoration(
-            hintText: "入力して下さい",
-          ),
-          onChanged: (value) {
-            input = value;
-          },
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                hintText: "入力して下さい",
+              ),
+              onChanged: (value) {
+                input = value;
+              },
+            ),
+            Text(input),
+          ],
         ),
       ),
     );
