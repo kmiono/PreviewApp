@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Preview App'),
     );
   }
 }
@@ -55,8 +55,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final myController = TextEditingController();
-  String input = "";
+  String _text = '';
 
   @override
   Widget build(BuildContext context) {
@@ -70,14 +69,16 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: "入力して下さい",
               ),
-              onChanged: (value) {
-                input = value;
+              onChanged: (String value) {
+                setState(() {
+                  _text = value;
+                });
               },
             ),
-            Text(input),
+            Text(_text),
           ],
         ),
       ),
