@@ -78,6 +78,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
             ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('入力'),
+            ),
             Text(_text),
           ],
         ),
