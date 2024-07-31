@@ -10,7 +10,7 @@ class previewPage extends StatelessWidget {
         title: const Text('Preview'),
       ),
       body: Container(
-        color: Colors.deepPurple,
+        child: Text(''),
       ),
     );
   }
