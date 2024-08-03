@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class previewPage extends StatelessWidget {
-  const previewPage({super.key});
+  previewPage(this._text);
+  String _text;
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class previewPage extends StatelessWidget {
         title: const Text('Preview'),
       ),
       body: Container(
-        child: Text(''),
+        child: Text(_text),
       ),
     );
   }

@@ -74,11 +74,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const previewPage()));
+                        builder: (context) => previewPage(_text)));
               },
               child: const Text('入力'),
             ),
-            Text(_text),
           ],
         ),
       ),
