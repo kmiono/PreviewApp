@@ -60,6 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             TextField(
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
               decoration: const InputDecoration(
                 hintText: "入力して下さい",
               ),

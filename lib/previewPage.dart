@@ -11,7 +11,7 @@ class previewPage extends StatelessWidget {
         title: const Text('Preview'),
       ),
       body: Container(
-        child: Text(_text),
+        child: Text.rich(TextSpan(text: _text)),
       ),
     );
   }
