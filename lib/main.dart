@@ -57,30 +57,32 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         width: double.infinity,
-        child: Column(
-          children: [
-            TextField(
-              keyboardType: TextInputType.multiline,
-              maxLines: null,
-              decoration: const InputDecoration(
-                hintText: "入力して下さい",
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TextField(
+                keyboardType: TextInputType.multiline,
+                maxLines: null,
+                decoration: const InputDecoration(
+                  hintText: "入力して下さい",
+                ),
+                onChanged: (String value) {
+                  setState(() {
+                    _text = value;
+                  });
+                },
               ),
-              onChanged: (String value) {
-                setState(() {
-                  _text = value;
-                });
-              },
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => previewPage(_text)));
-              },
-              child: const Text('入力'),
-            ),
-          ],
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => previewPage(_text)));
+                },
+                child: const Text('入力'),
+              ),
+            ],
+          ),
         ),
       ),
     );
