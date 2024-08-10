@@ -14,24 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
+        // テーマカラー指定：deepPurple
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      // AppTitle指定：Preview App
       home: const MyHomePage(title: 'Preview App'),
     );
   }
@@ -51,28 +38,36 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // titleとテーマカラーはMyAppウィジェットで指定したものを使っている
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: Container(
         width: double.infinity,
+        // 画面オーバーフロー防止
         child: SingleChildScrollView(
           child: Column(
             children: [
+              // 入力フォーム
               TextField(
+                // 複数行入力
                 keyboardType: TextInputType.multiline,
+                // 最大行指定なし
                 maxLines: null,
                 decoration: const InputDecoration(
+                  // 未入力の際に「入力して下さい」の表示
                   hintText: "入力して下さい",
                 ),
                 onChanged: (String value) {
+                  // setStateで_textに値渡し
                   setState(() {
                     _text = value;
                   });
                 },
               ),
               ElevatedButton(
+                // ボタンを押したときに_textを値渡し、画面遷移
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -88,5 +83,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-// 入力フォームから値を受け取るのに失敗してるっぽい？　onChanged:(value)が無効な定数値になるので、その辺調査
