@@ -1,6 +1,6 @@
 # previewapp
 
-A new Flutter project.
+[![Image from Gyazo](https://i.gyazo.com/71717927155ee387495bc622c77e8699.gif)](https://gyazo.com/71717927155ee387495bc622c77e8699)
 
 ## Getting Started
 
